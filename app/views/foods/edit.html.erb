@@ -1,2 +1,18 @@
-<h1>Foods#edit</h1>
-<p>Find me in app/views/foods/edit.html.erb</p>
+<p><%= flash[:alert] %></p>
+
+<h2>맛집 게시글 수정하기</h2>
+
+<%= form_tag '/foods/edit_complete', method: 'post' do %>
+    <input type="hidden" name="id" value="<%= @post.id %>">
+    <p style="color: #ff0000">분류:
+      <select name="post_category">
+        <option valie="한식">한식</option>
+        <option valie="일식">일식</option>
+        <option valie="중식">중식</option>
+        <option valie="양식">양식</option>
+      </select>
+    </p>
+    <p>제목 : <input type="text" name="post_title" value="<%= @post.title %>"></p>
+    <p>내용 : <textarea name="post_content"><%= @post.content %></textarea></p>
+    <%= submit_tag '수정하기' %>
+<% end %>
