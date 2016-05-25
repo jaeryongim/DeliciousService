@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  before_action :login_check, except: [ :posts, :posts_category, :show]
+
   def posts
     @posts = Post.all
   end
