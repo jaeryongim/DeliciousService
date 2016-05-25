@@ -1,2 +1,8 @@
-<h1>Users#login</h1>
-<p>Find me in app/views/users/login.html.erb</p>
+<p><%= flash[:alert] %></p>
+<h2>로그인 하기</h2>
+
+<%= form_tag '/users/login_complete', method: 'post' do %>
+    <p>아이디 : <input type="text" name="username" ></p>
+    <p>비밀번호 : <input type="password" name="password"></p>
+    <%= submit_tag '로그인' %>
+<% end %>

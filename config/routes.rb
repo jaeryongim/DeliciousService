@@ -20,9 +20,9 @@ Service::Application.routes.draw do
   get 'users/signup'
   post 'users/signup_complete'
 
-  get "users/login"
-  get "users/login_complete"
-  get "users/logout_complete"
+  get 'users/login'
+  post 'users/login_complete'
+  get 'users/logout_complete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
