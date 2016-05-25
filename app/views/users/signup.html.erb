@@ -1,0 +1,9 @@
+<p><%= flash[:alert] %></p>
+<h2>회원 가입하기</h2>
+
+<%= form_tag '/users/signup_complete', method: 'post' do %>
+    <p>아이디 : <input type="text" name="username"></p>
+    <p>비밀번호 : <input type="password" name="password"></p>
+    <p>비밀번호 확인 : <input type="password" name="password_confirm"></p>
+    <%= submit_tag '가입' %>
+<% end %>
