@@ -9,7 +9,7 @@
                                                                   confirm: {message: '정말로 지우시겠습니까?'} %></p>
   <hr/>
   <% @post.comments.each do |comment| %>
-      <p><strong>아이디</strong> <%= comment.content %></p>
+      <p><strong>아이디</strong> <%= comment.content %> | <%= link_to '삭제', "/foods/delete_comment_complete/#{comment.id}" %></p>
   <% end %>
   <%= form_tag '/foods/write_comment_complete', method: 'post' do %>
       <input type="hidden" name="post_id" value="<%= @post.id %>">
