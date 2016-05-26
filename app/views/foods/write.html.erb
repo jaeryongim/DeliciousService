@@ -1,7 +1,9 @@
 <p><%= flash[:alert] %></p>
 <h2>맛집 추가하기</h2>
 
-<%= form_tag '/foods/write_complete', method: 'post' do%>
+<!-- enctype = muiltipart/form-data => mulitpart: true 대체 가능 -->
+
+<%= form_tag '/foods/write_complete', method: 'post', multipart: true do%>
     <p style="color: #ff0000">분류 :
       <select name="post_category">
         <option value="한식">한식</option>
@@ -11,5 +13,6 @@
       </select></p>
     <p>제목 : <input type="text" name="post_title" placeholder="제목을 입력하세요."></p>
     <p>내용 : </p><textarea name="post_content" rows='10' placeholder="내용을 입력하세요."></textarea>
+    <p>사진 업로드 : <%= file_field_tag 'image' %></p>
     <%= submit_tag '추가하기' %>
 <% end %>

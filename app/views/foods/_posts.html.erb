@@ -1,5 +1,6 @@
 <% @posts.reverse.each do |post| %>
     <div style="border: 1px solid #ffffff">
+      <p><img src="<%= post.image_url %>" width="150"></p>
       <h4><%= link_to post.title, "/foods/show/#{post.id}" %> (<%= post.comments.count %>)</h4>
       <p style="color: #ff0000"><%= post.category %></p>
       <p><strong><%= post.user.username %></strong></p>
