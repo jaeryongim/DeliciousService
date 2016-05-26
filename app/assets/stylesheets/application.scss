@@ -11,3 +11,20 @@
  *= require_self
  *= require_tree .
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.service-title {
+  height: 120px;
+  padding: 50px 0px 0px 0px;
+  text-align: center;
+}
+
+a.service-title-link {
+  color: #a3293d;
+}
+
+a.service-title-link:hover {
+  color: #ee3b53;
+  text-decoration: none;
+}
